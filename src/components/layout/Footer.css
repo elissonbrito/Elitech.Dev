@@ -1,0 +1,28 @@
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 32px;
+}
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: var(--text-xs);
+  color: var(--fg-faint);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .footer__meta {
+    text-align: left;
+  }
+}

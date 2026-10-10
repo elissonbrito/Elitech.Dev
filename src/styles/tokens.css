@@ -1,0 +1,126 @@
+/*
+ * Layout: painel de engenharia — coluna de 1200px sobre uma grade técnica de 48px;
+ * o escudo bicolor (navy | vinho) dita as duas cores de marca.
+ * Tema escuro é o padrão; o claro entra por preferência do sistema ou pelo botão.
+ */
+:root {
+  /* Marca (fixas, iguais à logo) */
+  --brand-navy: #0B2B5E;
+  --brand-maroon: #7D152E;
+  --brand-maroon-hover: #951B38;
+
+  /* Superfícies */
+  --bg: #070D19;
+  --bg-elev: #0C1628;
+  --bg-soft: #111E35;
+  --line: #1B2B47;
+  --line-strong: #2A3F63;
+  --grid: rgba(111, 160, 232, 0.07);
+
+  /* Texto */
+  --fg: #E7ECF5;
+  --fg-muted: #9AA9C4;
+  --fg-faint: #6B7C9C;
+
+  /* Acentos (versões iluminadas da marca para leitura no escuro) */
+  --accent: #EC6A86;
+  --accent-2: #7EAAEB;
+  --wordmark-eli: #8DB4EC;
+  --wordmark-tech: #EC6A86;
+  --on-brand: #FFFFFF;
+
+  /* Semânticas */
+  --ok: #4CC79A;
+  --warn: #E8B04A;
+  --info: #7EAAEB;
+
+  /* Código */
+  --code-keyword: #EC6A86;
+  --code-string: #7FD1AE;
+  --code-comment: #6B7C9C;
+  --code-number: #E8B04A;
+
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  --nav-bg: rgba(7, 13, 25, 0.82);
+  --logo-glow: drop-shadow(0 0 6px rgba(126, 170, 235, 0.35));
+
+  /* Tipografia */
+  --font-display: 'Chakra Petch', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.875rem;
+  --text-2xl: clamp(2rem, 3.6vw, 2.875rem);
+  --text-hero: clamp(2.5rem, 5.6vw, 4.5rem);
+
+  /* Espaço e forma */
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --section-y: clamp(72px, 10vw, 120px);
+
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #F3F5F9;
+    --bg-elev: #FFFFFF;
+    --bg-soft: #E9EDF4;
+    --line: #DAE0EA;
+    --line-strong: #C3CCDB;
+    --grid: rgba(11, 43, 94, 0.06);
+    --fg: #0A1426;
+    --fg-muted: #46536A;
+    --fg-faint: #6C7891;
+    --accent: #7D152E;
+    --accent-2: #0B2B5E;
+    --wordmark-eli: #0B2B5E;
+    --wordmark-tech: #7D152E;
+    --ok: #1B7A4D;
+    --warn: #8F6200;
+    --info: #0B4A9E;
+    --code-keyword: #7D152E;
+    --code-string: #1B7A4D;
+    --code-comment: #6C7891;
+    --code-number: #8F6200;
+    --shadow: 0 24px 60px rgba(10, 20, 38, 0.12);
+    --nav-bg: rgba(243, 245, 249, 0.86);
+    --logo-glow: none;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme='light'] {
+  --bg: #F3F5F9;
+  --bg-elev: #FFFFFF;
+  --bg-soft: #E9EDF4;
+  --line: #DAE0EA;
+  --line-strong: #C3CCDB;
+  --grid: rgba(11, 43, 94, 0.06);
+  --fg: #0A1426;
+  --fg-muted: #46536A;
+  --fg-faint: #6C7891;
+  --accent: #7D152E;
+  --accent-2: #0B2B5E;
+  --wordmark-eli: #0B2B5E;
+  --wordmark-tech: #7D152E;
+  --ok: #1B7A4D;
+  --warn: #8F6200;
+  --info: #0B4A9E;
+  --code-keyword: #7D152E;
+  --code-string: #1B7A4D;
+  --code-comment: #6C7891;
+  --code-number: #8F6200;
+  --shadow: 0 24px 60px rgba(10, 20, 38, 0.12);
+  --nav-bg: rgba(243, 245, 249, 0.86);
+  --logo-glow: none;
+  color-scheme: light;
+}

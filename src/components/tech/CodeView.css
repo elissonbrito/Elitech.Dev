@@ -1,0 +1,34 @@
+.code-view {
+  margin: 0;
+  padding: 16px 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--fg);
+}
+
+.code-view__line {
+  display: flex;
+  min-width: max-content;
+  padding-right: 16px;
+}
+
+.code-view__number {
+  width: 40px;
+  flex-shrink: 0;
+  padding-right: 14px;
+  text-align: right;
+  color: var(--fg-faint);
+  user-select: none;
+  font-variant-numeric: tabular-nums;
+}
+
+.code-view__content {
+  white-space: pre;
+}
+
+.tok--keyword { color: var(--code-keyword); }
+.tok--string { color: var(--code-string); }
+.tok--comment { color: var(--code-comment); font-style: italic; }
+.tok--number { color: var(--code-number); }

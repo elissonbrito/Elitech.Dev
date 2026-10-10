@@ -1,0 +1,37 @@
+.terminal {
+  min-height: 132px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  font-size: 12.5px;
+  line-height: 1.85;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.terminal__cmd {
+  color: var(--fg);
+}
+
+.terminal__out {
+  color: var(--ok);
+}
+
+.terminal__cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  margin-left: 2px;
+  vertical-align: -2px;
+  background: var(--accent);
+}
+
+.terminal__cursor--blink {
+  animation: cursor-blink 1s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}

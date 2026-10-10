@@ -1,0 +1,76 @@
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* trilha que liga as etapas */
+.pipeline::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-navy), var(--brand-maroon));
+  opacity: 0.8;
+}
+
+.pipeline__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pipeline__node {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--accent-2);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--fg);
+  font-size: var(--text-sm);
+  margin-bottom: 8px;
+}
+
+.pipeline__step:last-child .pipeline__node {
+  border-color: var(--accent);
+}
+
+.pipeline__title {
+  font-size: var(--text-lg);
+}
+
+.pipeline__text {
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 860px) {
+  .pipeline {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-left: 66px;
+  }
+  .pipeline::before {
+    top: 22px;
+    bottom: 22px;
+    left: 22px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--brand-navy), var(--brand-maroon));
+  }
+  .pipeline__node {
+    position: absolute;
+    left: -66px;
+    top: -6px;
+  }
+}

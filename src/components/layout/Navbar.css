@@ -1,0 +1,231 @@
+.navbar {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 50;
+  border-bottom: 1px solid transparent;
+  transition: background 0.25s, border-color 0.25s;
+}
+
+.navbar.is-scrolled,
+.navbar.is-menu-open {
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-color: var(--line);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.icon-button:hover {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+/* ---------- Lista e itens (recursivos) ---------- */
+.nav-list,
+.nav-submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item__row {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--fg-muted);
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-item__link:hover,
+.nav-item.is-active > .nav-item__row > .nav-item__link {
+  color: var(--fg);
+}
+
+.nav-item--depth-0.is-active > .nav-item__row > .nav-item__link {
+  box-shadow: inset 0 -2px 0 var(--accent);
+  border-radius: 0;
+}
+
+.nav-item__prefix {
+  color: var(--accent);
+}
+
+.nav-item__toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--fg-faint);
+  cursor: pointer;
+}
+
+.nav-item__toggle svg {
+  transform: rotate(90deg);
+  transition: transform 0.2s;
+}
+
+.nav-item.is-open > .nav-item__row .nav-item__toggle svg {
+  transform: rotate(-90deg);
+}
+
+.nav-submenu {
+  display: none;
+}
+
+.nav-item.is-open > .nav-submenu {
+  display: block;
+}
+
+/* ---------- Desktop: dropdowns em cascata ---------- */
+@media (min-width: 960px) {
+  .navbar__burger {
+    display: none;
+  }
+
+  .nav-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    padding: 8px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  /* Do 2º nível em diante, o submenu abre ao lado */
+  .nav-submenu .nav-submenu {
+    top: -9px;
+    left: 100%;
+  }
+
+  .nav-submenu .nav-item__row {
+    justify-content: space-between;
+  }
+
+  .nav-submenu .nav-item__link {
+    flex: 1;
+    white-space: nowrap;
+  }
+
+  .nav-submenu .nav-item__toggle svg {
+    transform: none;
+  }
+
+  @media (hover: hover) {
+    .nav-item--branch:hover > .nav-submenu {
+      display: block;
+    }
+  }
+
+  .nav-item--branch:focus-within > .nav-submenu {
+    display: block;
+  }
+}
+
+/* ---------- Mobile: painel com acordeão recursivo ---------- */
+@media (max-width: 959px) {
+  .navbar__nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    padding: 12px var(--gutter) 24px;
+    background: var(--bg-elev);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .navbar.is-menu-open .navbar__nav {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-item__row {
+    justify-content: space-between;
+  }
+
+  .nav-item__link {
+    flex: 1;
+    font-size: var(--text-base);
+  }
+
+  .nav-item__toggle {
+    width: 44px;
+  }
+
+  .nav-submenu {
+    margin-left: 14px;
+    padding-left: 10px;
+    border-left: 1px dashed var(--line-strong);
+  }
+
+  .nav-item--depth-0.is-active > .nav-item__row > .nav-item__link {
+    box-shadow: inset 2px 0 0 var(--accent);
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar__cta {
+    display: none;
+  }
+}

@@ -1,0 +1,64 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo__word {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.logo__eli {
+  color: var(--wordmark-eli);
+}
+
+.logo__tech {
+  color: var(--wordmark-tech);
+}
+
+/* Linha dupla com ponto central, como na logo original */
+.logo__rule {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo__rule span {
+  height: 2px;
+  flex: 1;
+  background: var(--wordmark-eli);
+}
+
+.logo__rule span:last-child {
+  background: var(--wordmark-tech);
+}
+
+.logo__rule i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wordmark-eli);
+}
+
+.logo__tagline {
+  font-size: var(--text-xs);
+  color: var(--fg-muted);
+}
+
+.logo-mark {
+  display: block;
+  width: auto;
+  flex-shrink: 0;
+  user-select: none;
+  filter: var(--logo-glow); /* realça o navy da logo no tema escuro */
+}

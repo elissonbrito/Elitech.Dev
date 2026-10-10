@@ -1,0 +1,119 @@
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: var(--text-base);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn--sm {
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: var(--text-sm);
+}
+
+.btn--primary {
+  background: var(--brand-maroon);
+  color: var(--on-brand);
+}
+
+.btn--primary:hover {
+  background: var(--brand-maroon-hover);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  border: 1px solid var(--line-strong);
+  color: var(--fg);
+  background: transparent;
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-2);
+}
+
+/* ---------- Cabeçalho de seção ---------- */
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.section-header__main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 680px;
+}
+
+.section-header__path {
+  font-size: var(--text-sm);
+  color: var(--accent);
+}
+
+.section-header__path span {
+  color: var(--fg-faint);
+}
+
+.section-header__title {
+  font-size: var(--text-2xl);
+}
+
+.section-header__lead {
+  max-width: 440px;
+  color: var(--fg-muted);
+  font-size: var(--text-md);
+}
+
+/* ---------- Status ---------- */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.status-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-pill--ok .status-pill__dot { background: var(--ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 25%, transparent); }
+.status-pill--warn .status-pill__dot { background: var(--warn); }
+.status-pill--info .status-pill__dot { background: var(--info); }
+
+/* ---------- Tags de stack ---------- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-soft);
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}

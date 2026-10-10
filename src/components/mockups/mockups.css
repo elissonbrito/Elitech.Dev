@@ -1,0 +1,348 @@
+/* As telas de clientes mantêm as cores da marca DELES (iguais nos dois temas). */
+
+/* ---------- R Bombas ---------- */
+.rb {
+  display: flex;
+  min-height: 300px;
+  background: #FFFFFF;
+  color: #141414;
+  font-family: Montserrat, var(--font-body);
+  font-size: 12px;
+}
+
+.rb__side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 140px;
+  flex-shrink: 0;
+  padding: 18px 14px;
+  background: #0D0D0D;
+  color: #B5B5B5;
+}
+
+.rb__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: #FFFFFF;
+}
+
+.rb__badge {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: #F3B229;
+  color: #0D0D0D;
+  font-weight: 800;
+}
+
+.rb__menu.is-active {
+  color: #F3B229;
+  font-weight: 600;
+}
+
+.rb__main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  padding: 16px;
+}
+
+.rb__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.rb__stat {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+  color: #6B6B6B;
+}
+
+.rb__stat strong {
+  color: #141414;
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rb__stat.is-alert {
+  border-color: #F3B229;
+  background: #FFF8E6;
+  color: #6B5300;
+}
+
+.rb__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rb__new {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #F3B229;
+  font-weight: 600;
+}
+
+.rb__orders {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rb__orders li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.rb__status--progress { color: #6B5300; }
+.rb__status--done { color: #1F7A4D; }
+
+/* ---------- Toca do Espanhol ---------- */
+.toca {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 280px;
+  background: #1A1310;
+  color: #F4ECE4;
+  font-size: 12px;
+}
+
+.toca__catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-right: 1px solid #3A2A22;
+}
+
+.toca__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.toca__tab {
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #2E211B;
+}
+
+.toca__tab.is-active {
+  background: #B5502E;
+  color: #FFFFFF;
+}
+
+.toca__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.toca__product {
+  padding: 10px;
+  border-radius: 8px;
+  background: #2E211B;
+}
+
+.toca__order {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+}
+
+.toca__line {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.toca__route {
+  font-family: var(--font-mono);
+  color: #D6A77A;
+  white-space: nowrap;
+}
+
+.toca__send {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 8px;
+  background: #B5502E;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ---------- Palco dos mockups menores ---------- */
+.mock-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 24px 24px,
+    var(--bg-soft);
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 160px;
+  padding: 22px 12px 16px;
+  border: 6px solid #0A1426;
+  border-radius: 26px;
+  background: #FFFFFF;
+  color: #1E1B2E;
+  font-size: 11px;
+  position: relative;
+}
+
+.phone__notch {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 46px;
+  height: 6px;
+  border-radius: 6px;
+  background: #0A1426;
+  transform: translateX(-50%);
+}
+
+.phone__title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #4B3B8F;
+}
+
+.phone__card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.phone__card--a { background: #EDE8FA; }
+.phone__card--b { background: #FCEBEF; }
+.phone__card--c { background: #E8F4EE; }
+
+.mini-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  font-size: 12px;
+}
+
+.mini-panel__head {
+  display: flex;
+  justify-content: space-between;
+  color: var(--fg);
+}
+
+.mini-panel__head span {
+  color: var(--fg-faint);
+}
+
+.mini-panel__chips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  color: var(--fg-muted);
+}
+
+.mini-panel__chips span {
+  padding: 6px;
+  border-radius: 6px;
+  background: var(--bg-soft);
+  text-align: center;
+}
+
+.mini-panel__bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 110px;
+}
+
+.mini-panel__bars i {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  background: color-mix(in srgb, var(--accent-2) 45%, transparent);
+}
+
+.mini-panel__bars i.is-peak,
+.mini-panel__row i.is-peak {
+  background: var(--accent);
+}
+
+.mini-panel__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-panel__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-muted);
+}
+
+.mini-panel__row span {
+  width: 64px;
+  flex-shrink: 0;
+}
+
+.mini-panel__row i {
+  height: 10px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent-2) 45%, transparent);
+}
+
+.mini-panel__spark {
+  width: 100%;
+  height: 48px;
+}
+
+.mini-panel__spark polyline {
+  fill: none;
+  stroke: var(--ok);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (max-width: 480px) {
+  .rb__side {
+    width: 104px;
+  }
+  .toca {
+    grid-template-columns: 1fr;
+  }
+  .toca__catalog {
+    border-right: 0;
+    border-bottom: 1px solid #3A2A22;
+  }
+}
