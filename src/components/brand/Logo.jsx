@@ -2,7 +2,7 @@ import iconSrc from '../../assets/elitech-icon.png';
 import { site } from '../../config/site';
 import './Logo.css';
 
-/** Símbolo oficial da EliTech: o "E" em circuito com o escudo. */
+/** Símbolo da marca: o "E" em circuito com o escudo. */
 export function LogoMark({ size = 40, decorative = true }) {
   return (
     <img
@@ -10,21 +10,22 @@ export function LogoMark({ size = 40, decorative = true }) {
       src={iconSrc}
       height={size}
       width={Math.round(size * 0.846)}
-      alt={decorative ? '' : site.legalName}
+      alt={decorative ? '' : site.name}
       draggable="false"
     />
   );
 }
 
-/** Logo completa: símbolo + ELITECH (+ linha e slogan opcionais). */
+/** Logo completa: símbolo + nome (+ linha e slogan opcionais). */
 export function Logo({ size = 36, withTagline = false }) {
+  const [first, last] = site.name.split(' ');
+
   return (
     <span className="logo">
       <LogoMark size={size} />
       <span className="logo__text">
         <span className="logo__word" aria-label={site.name}>
-          <span className="logo__eli">ELI</span>
-          <span className="logo__tech">TECH</span>
+          <span className="logo__eli">{first}</span> <span className="logo__tech">{last}</span>
         </span>
         {withTagline && (
           <>

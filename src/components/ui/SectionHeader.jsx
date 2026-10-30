@@ -1,3 +1,4 @@
+import { site } from '../../config/site';
 import './ui.css';
 
 /**
@@ -9,7 +10,7 @@ export function SectionHeader({ path, title, children }) {
     <header className="section-header">
       <div className="section-header__main">
         <span className="section-header__path mono">
-          <span aria-hidden="true">~/elitech/</span>
+          <span aria-hidden="true">~/{site.handle}/</span>
           {path}
         </span>
         <h2 className="section-header__title">{title}</h2>

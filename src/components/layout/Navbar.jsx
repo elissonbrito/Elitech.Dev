@@ -52,8 +52,8 @@ export function Navbar({ theme, onToggleTheme }) {
           </button>
 
           <span className="navbar__cta">
-            <Button href={site.contact.whatsappUrl} icon="whatsapp" size="sm">
-              Orçamento
+            <Button href={site.contact.linkedinUrl} icon="linkedin" size="sm">
+              LinkedIn
             </Button>
           </span>
 

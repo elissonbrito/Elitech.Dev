@@ -2,7 +2,7 @@
   padding-block: var(--section-y);
 }
 
-.services-grid {
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 
-.service-card {
+.skill-card {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -22,18 +22,18 @@
   scroll-margin-top: 96px;
 }
 
-.service-card:hover,
-.service-card:target {
+.skill-card:hover,
+.skill-card:target {
   background: var(--bg-soft);
 }
 
-.service-card__top {
+.skill-card__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.service-card__icon {
+.skill-card__icon {
   display: grid;
   place-items: center;
   width: 48px;
@@ -43,27 +43,27 @@
   color: var(--accent-2);
 }
 
-.service-card:hover .service-card__icon {
+.skill-card:hover .skill-card__icon {
   border-color: var(--accent);
   color: var(--accent);
 }
 
-.service-card__key {
+.skill-card__key {
   font-size: var(--text-xs);
   color: var(--fg-faint);
 }
 
-.service-card__title {
+.skill-card__title {
   font-size: var(--text-lg);
 }
 
-.service-card__text {
+.skill-card__text {
   flex: 1;
   color: var(--fg-muted);
   font-size: 0.95rem;
 }
 
-.bundle {
+.education {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -76,51 +76,56 @@
   color: #FFFFFF;
 }
 
-.bundle__copy {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.bundle__label {
+.education__label {
   font-size: var(--text-xs);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #A9C2E8;
 }
 
-.bundle__title {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-}
-
-.bundle__terms {
+.education__terms {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 12px 40px;
   margin: 0;
   padding: 0;
   list-style: none;
   color: #D5DFEF;
 }
 
-.bundle__terms li {
+.education__terms li {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.education__terms li svg {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.education__course strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  color: #FFFFFF;
+}
+
+.education__meta {
+  font-size: var(--text-sm);
 }
 
 @media (max-width: 960px) {
-  .services-grid {
+  .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 600px) {
-  .services-grid {
+  .skills-grid {
     grid-template-columns: 1fr;
   }
-  .bundle {
+  .education {
     padding: 24px;
   }
 }

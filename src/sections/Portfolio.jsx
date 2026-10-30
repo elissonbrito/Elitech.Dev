@@ -24,10 +24,19 @@ function ProjectInfo({ project }) {
           </li>
         ))}
       </ul>
-      {project.url && (
-        <a className="project__link" href={project.url} target="_blank" rel="noopener noreferrer">
-          Ver sistema no ar <Icon name="external" size={16} />
-        </a>
+      {(project.url || project.repo) && (
+        <div className="project__links">
+          {project.url && (
+            <a className="project__link" href={project.url} target="_blank" rel="noopener noreferrer">
+              Ver demonstração <Icon name="external" size={16} />
+            </a>
+          )}
+          {project.repo && (
+            <a className="project__link" href={project.repo} target="_blank" rel="noopener noreferrer">
+              Ver código <Icon name="github" size={16} />
+            </a>
+          )}
+        </div>
       )}
     </div>
   );
@@ -37,7 +46,7 @@ function ProjectFeature({ project, reversed }) {
   const Mockup = mockups[project.mockup];
   return (
     <article id={project.id} className={`project project--feature ${reversed ? 'is-reversed' : ''}`}>
-      <div className="project__visual">{Mockup && <Mockup />}</div>
+      <div className="project__visual">{Mockup && <Mockup {...project.mockupProps} />}</div>
       <ProjectInfo project={project} />
     </article>
   );
@@ -47,7 +56,7 @@ function ProjectCard({ project }) {
   const Mockup = mockups[project.mockup];
   return (
     <article id={project.id} className="project project--card">
-      {Mockup && <Mockup />}
+      {Mockup && <Mockup {...project.mockupProps} />}
       <ProjectInfo project={project} />
     </article>
   );
@@ -72,10 +81,11 @@ export function Portfolio() {
   const others = visible.filter((p) => !p.featured);
 
   return (
-    <section id="portfolio" className="section section--alt">
+    <section id="projetos" className="section section--alt">
       <div className="container">
         <SectionHeader path="projetos" title="Projetos que já saíram do papel.">
-          Telas ilustrativas dos sistemas, com dados de exemplo.
+          Sistemas para clientes reais, análises de dados e automações. As telas são ilustrativas; os números dos
+          projetos de dados são os resultados reais.
         </SectionHeader>
 
         <div className="filters" role="group" aria-label="Filtrar projetos">

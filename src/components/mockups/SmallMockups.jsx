@@ -1,3 +1,4 @@
+import { CodeView } from '../tech/CodeView';
 import './mockups.css';
 
 /** App Primeiros Passos em moldura de celular. */
@@ -32,7 +33,7 @@ export function AgoraMockup() {
       <div className="mini-panel">
         <div className="mini-panel__head">
           <strong>Ágora · Ouvidoria</strong>
-          <span className="mono">Maricá</span>
+          <span className="mono">protótipo</span>
         </div>
         <div className="mini-panel__chips">
           <span>Recebidas</span>
@@ -49,21 +50,21 @@ export function AgoraMockup() {
   );
 }
 
-/** Painel de dados genérico (chamados por bairro + tendência). */
-export function DashboardMockup() {
-  const rows = [
-    { label: 'Bairro A', value: 80, peak: true },
-    { label: 'Bairro B', value: 62 },
-    { label: 'Bairro C', value: 48 },
-    { label: 'Bairro D', value: 35 },
-  ];
+const DEFAULT_ROWS = [
+  { label: 'Serviço A', value: 80, peak: true },
+  { label: 'Serviço B', value: 62 },
+  { label: 'Serviço C', value: 48 },
+  { label: 'Serviço D', value: 35 },
+];
 
+/** Painel de dados genérico (ranking em barras + tendência). */
+export function DashboardMockup({ title = 'Painel de chamados', tag = 'exemplo', rows = DEFAULT_ROWS }) {
   return (
     <div className="mock-stage">
       <div className="mini-panel">
         <div className="mini-panel__head">
-          <strong>Painel de chamados</strong>
-          <span className="mono">exemplo</span>
+          <strong>{title}</strong>
+          <span className="mono">{tag}</span>
         </div>
         <div className="mini-panel__rows" aria-hidden="true">
           {rows.map((row) => (
@@ -76,6 +77,74 @@ export function DashboardMockup() {
         <svg className="mini-panel__spark" viewBox="0 0 200 50" aria-hidden="true" preserveAspectRatio="none">
           <polyline points="0,42 30,36 60,38 90,24 120,28 150,14 180,18 200,6" />
         </svg>
+      </div>
+    </div>
+  );
+}
+
+/** Cartões de indicadores com os números reais de um projeto de dados. */
+export function KpiMockup({ title, tag, kpis = [] }) {
+  return (
+    <div className="mock-stage">
+      <div className="mini-panel">
+        <div className="mini-panel__head">
+          <strong>{title}</strong>
+          <span className="mono">{tag}</span>
+        </div>
+        <dl className="mini-panel__kpis">
+          {kpis.map((kpi) => (
+            <div
+              key={kpi.label}
+              className={`mini-panel__kpi ${kpi.peak ? 'is-peak' : ''} ${/\d/.test(kpi.value) ? '' : 'is-text'}`}
+            >
+              <dt>{kpi.label}</dt>
+              <dd>{kpi.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  );
+}
+
+/** Conversa de exemplo com a Bia, bot de DM do Instagram. */
+export function ChatMockup() {
+  const messages = [
+    { from: 'user', text: 'Oi! Vocês atendem no sábado?' },
+    { from: 'bot', text: 'Oi! Atendemos sim, das 9h às 13h. Quer que eu reserve um horário?' },
+    { from: 'user', text: 'Quero, 10h.' },
+  ];
+
+  return (
+    <div className="mock-stage">
+      <div className="chat">
+        <div className="chat__head">
+          <span className="chat__avatar" aria-hidden="true">B</span>
+          <strong>Bia</strong>
+          <span className="chat__status mono">online</span>
+        </div>
+        {messages.map((message) => (
+          <p key={message.text} className={`chat__bubble chat__bubble--${message.from}`}>
+            {message.text}
+          </p>
+        ))}
+        <span className="chat__typing" aria-hidden="true">
+          <i />
+          <i />
+          <i />
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/** Trecho de código em mini editor, para projetos de backend. */
+export function CodeMockup({ file, code }) {
+  return (
+    <div className="mock-stage mock-stage--code">
+      <div className="mini-code">
+        <span className="mini-code__tab mono">{file}</span>
+        <CodeView code={code} />
       </div>
     </div>
   );

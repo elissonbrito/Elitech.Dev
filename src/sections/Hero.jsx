@@ -12,7 +12,7 @@ import { site } from '../config/site';
 import { countLeaves, findFirstLeaf, findPath } from '../utils/tree';
 import './Hero.css';
 
-const INITIAL_EXPANDED = ['root', 'servicos', 'software', 'projetos'];
+const INITIAL_EXPANDED = ['root', 'projetos', 'sistemas'];
 
 export function Hero() {
   const [expanded, setExpanded] = useState(() => new Set(INITIAL_EXPANDED));
@@ -40,44 +40,47 @@ export function Hero() {
 
       <div className="hero__inner container">
         <div className="hero__copy">
-          <StatusPill tone="ok">online · atendendo {site.region}</StatusPill>
+          <StatusPill tone="ok">aberto a oportunidades · {site.city}</StatusPill>
 
           <h1 className="hero__title">
-            Você imagina,
-            <span className="hero__title-accent"> nós desenvolvemos.</span>
+            {site.name}
+            <span className="hero__title-accent">{site.role}.</span>
           </h1>
 
           <p className="hero__lead">
-            Software, dados e segurança eletrônica para residências e pequenos negócios. Do código à câmera
-            instalada na parede, com uma só equipe.
+            Passei seis anos na gestão pública transformando papel e planilha em painel, automação e processo.
+            Hoje construo sistemas web e análises de dados que resolvem problema de verdade, para clientes reais.
           </p>
 
           <div className="hero__actions">
-            <Button href={site.contact.whatsappUrl} icon="whatsapp">
-              Falar no WhatsApp
+            <Button href="#projetos" icon="arrow">
+              Ver projetos
             </Button>
-            <Button href={site.contact.instagramUrl} icon="instagram" variant="ghost">
-              {site.contact.instagramHandle}
+            <Button href={site.contact.linkedinUrl} icon="linkedin" variant="ghost">
+              LinkedIn
+            </Button>
+            <Button href={site.contact.githubUrl} icon="github" variant="ghost">
+              GitHub
             </Button>
           </div>
 
           <dl className="hero__specs mono">
             <div>
-              <dt>stack</dt>
-              <dd>web · mobile · dados · CFTV</dd>
+              <dt>foco</dt>
+              <dd>SQL · Power BI · Python</dd>
             </div>
             <div>
-              <dt>visita técnica</dt>
-              <dd>gratuita</dd>
+              <dt>formação</dt>
+              <dd>Banco de Dados · Eng. Software</dd>
             </div>
             <div>
-              <dt>garantia</dt>
-              <dd>90 dias</dd>
+              <dt>código aberto</dt>
+              <dd>R Bombas · Toca · Ágora</dd>
             </div>
           </dl>
         </div>
 
-        <WindowFrame title="elitech — explorer" className="hero__ide">
+        <WindowFrame title={`${site.handle} · explorer`} className="hero__ide">
           <div className="ide">
             <div className="ide__explorer">
               <span className="ide__label mono">explorer · {totalFiles} arquivos</span>

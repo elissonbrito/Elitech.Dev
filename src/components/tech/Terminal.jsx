@@ -2,18 +2,18 @@ import { useTypewriter } from '../../hooks/useTypewriter';
 import './Terminal.css';
 
 const LINES = [
-  '$ elitech new --cliente "seu-negocio"',
-  '  ✓ levantamento    ✓ protótipo    ✓ aprovação',
-  '$ elitech deploy --suporte maricá',
-  '  ✓ no ar. garantia de 90 dias ativa.',
+  '$ whoami',
+  '  ✓ élisson brito · dados, backend e produto',
+  '$ ls projetos/ --publicos',
+  '  ✓ r-bombas    toca-do-espanhol    agora',
 ];
 
-/** Terminal que "digita" o fluxo de trabalho da EliTech. */
+/** Terminal que "digita" uma apresentação rápida. */
 export function Terminal() {
   const { visible, done } = useTypewriter(LINES);
 
   return (
-    <div className="terminal mono" aria-label="Fluxo de trabalho: levantamento, protótipo, aprovação e entrega com suporte em Maricá">
+    <div className="terminal mono" aria-label="Apresentação: Élisson Brito, dados, backend e produto, com projetos públicos no GitHub">
       {visible.map((line, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <div key={index} className={line.trimStart().startsWith('✓') ? 'terminal__out' : 'terminal__cmd'} aria-hidden="true">

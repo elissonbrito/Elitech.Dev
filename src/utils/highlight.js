@@ -3,10 +3,10 @@
  * Divide uma linha em tokens { type, text } sem depender de bibliotecas.
  */
 const TOKEN_PATTERN =
-  /(\/\/.*$|#.*$|<!--.*-->|"(?:[^"\\]|\\.)*"|\b(?:const|export|default|function|return|await|import|from|true|false)\b|\b\d+\b)/g;
+  /(\/\/.*$|#.*$|^--.*$|<!--.*-->|"(?:[^"\\]|\\.)*"|\b(?:const|export|default|function|return|await|async|import|from|true|false|if|class|new|private)\b|\b\d+\b)/g;
 
 function classify(text) {
-  if (text.startsWith('//') || text.startsWith('#') || text.startsWith('<!--')) return 'comment';
+  if (text.startsWith('//') || text.startsWith('#') || text.startsWith('--') || text.startsWith('<!--')) return 'comment';
   if (text.startsWith('"')) return 'string';
   if (/^\d+$/.test(text)) return 'number';
   return 'keyword';

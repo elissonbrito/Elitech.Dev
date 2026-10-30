@@ -1,6 +1,13 @@
 import { RBombasMockup } from './RBombasMockup';
 import { TocaMockup } from './TocaMockup';
-import { AgoraMockup, DashboardMockup, PrimeirosPassosMockup } from './SmallMockups';
+import {
+  AgoraMockup,
+  ChatMockup,
+  CodeMockup,
+  DashboardMockup,
+  KpiMockup,
+  PrimeirosPassosMockup,
+} from './SmallMockups';
 
 /** Registro chave → tela, usado pelo campo `mockup` de src/data/projects.js. */
 export const mockups = {
@@ -9,4 +16,7 @@ export const mockups = {
   primeirosPassos: PrimeirosPassosMockup,
   agora: AgoraMockup,
   dashboard: DashboardMockup,
+  kpi: KpiMockup,
+  chat: ChatMockup,
+  code: CodeMockup,
 };

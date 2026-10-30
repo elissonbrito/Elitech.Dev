@@ -4,36 +4,18 @@
  * recursivamente a partir desta estrutura.
  */
 export const navigation = [
+  { id: 'sobre', label: 'Sobre', href: '#sobre' },
   {
-    id: 'servicos',
-    label: 'Serviços',
-    href: '#servicos',
+    id: 'projetos',
+    label: 'Projetos',
+    href: '#projetos',
     children: [
-      {
-        id: 'nav-software',
-        label: 'Software',
-        href: '#svc-software',
-        children: [
-          { id: 'nav-sites', label: 'Sites e landing pages', href: '#svc-software' },
-          { id: 'nav-sistemas', label: 'Sistemas de gestão', href: '#svc-software' },
-          { id: 'nav-apps', label: 'Apps mobile', href: '#svc-software' },
-        ],
-      },
-      { id: 'nav-dados', label: 'Dados e dashboards', href: '#svc-dados' },
-      {
-        id: 'nav-seguranca',
-        label: 'Segurança eletrônica',
-        href: '#svc-cftv',
-        children: [
-          { id: 'nav-cftv', label: 'CFTV IP', href: '#svc-cftv' },
-          { id: 'nav-alarmes', label: 'Alarmes e intrusão', href: '#svc-alarmes' },
-          { id: 'nav-portoes', label: 'Portões eletrônicos', href: '#svc-portoes' },
-        ],
-      },
-      { id: 'nav-infra', label: 'Computadores e servidores', href: '#svc-infra' },
+      { id: 'nav-software', label: 'Sistemas', href: '#projeto-r-bombas' },
+      { id: 'nav-dados', label: 'Dados e BI', href: '#projeto-spotify' },
+      { id: 'nav-automacao', label: 'Automação e IA', href: '#projeto-bia' },
     ],
   },
-  { id: 'portfolio', label: 'Portfólio', href: '#portfolio' },
-  { id: 'processo', label: 'Como trabalhamos', href: '#processo' },
+  { id: 'stack', label: 'Stack', href: '#stack' },
+  { id: 'experiencia', label: 'Experiência', href: '#experiencia' },
   { id: 'contato', label: 'Contato', href: '#contato' },
 ];

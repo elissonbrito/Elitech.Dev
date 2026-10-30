@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-const STORAGE_KEY = 'elitech-theme';
+const STORAGE_KEY = 'portfolio-theme';
 const DARK_QUERY = '(prefers-color-scheme: dark)';
 
 function readStored() {

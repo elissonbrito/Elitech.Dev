@@ -1,6 +1,6 @@
-# Site EliTech
+# Portfólio · Élisson Brito
 
-Site institucional e portfólio da **EliTech Tecnologia e Segurança** (Maricá, RJ).
+Portfólio pessoal de **Élisson Brito** (Maricá, RJ): dados, BI, backend e produtos digitais.
 React 18 + Vite, sem bibliotecas de UI, com tema escuro/claro.
 
 ## Rodar
@@ -20,10 +20,11 @@ npm run build    # gera a pasta dist/ pronta para publicar
 
 | Quero mudar…                     | Arquivo                       |
 | -------------------------------- | ----------------------------- |
-| Telefone, Instagram, e-mail      | `src/config/site.js`          |
-| Trocar o símbolo da logo         | substitua `src/assets/elitech-icon.png` (fundo transparente) |
+| Nome, LinkedIn, GitHub, e-mail   | `src/config/site.js`          |
+| Trocar o símbolo da logo         | substitua `src/assets/elitech-icon.png` (fundo transparente) e os ícones em `public/` |
 | Menu e submenus                  | `src/data/navigation.js`      |
-| Serviços                         | `src/data/services.js`        |
+| Stack e formação                 | `src/data/skills.js`          |
+| Experiência e números do "Sobre" | `src/data/experience.js`      |
 | Projetos do portfólio            | `src/data/projects.js`        |
 | Arquivos do "IDE" do topo        | `src/data/fileTree.js`        |
 | Cores e fontes                   | `src/styles/tokens.css`       |
@@ -32,17 +33,17 @@ npm run build    # gera a pasta dist/ pronta para publicar
 
 ```
 src/
-├── config/        dados institucionais (fonte única)
-├── data/          conteúdo: navegação, serviços, projetos, árvore de arquivos
+├── config/        dados pessoais (fonte única)
+├── data/          conteúdo: navegação, stack, experiência, projetos, árvore de arquivos
 ├── hooks/         useTheme, useActiveSection, useTypewriter, useScrolled…
 ├── utils/         tree.js (funções recursivas), highlight.js
 ├── components/
-│   ├── brand/     Logo (símbolo oficial + ELITECH)
+│   ├── brand/     Logo (símbolo + nome)
 │   ├── layout/    Navbar, NavItem (recursivo), Footer
 │   ├── tech/      FileTree (recursivo), CodeView, Terminal, CircuitCanvas, WindowFrame
 │   ├── mockups/   telas ilustrativas dos projetos
 │   └── ui/        Button, Icon, SectionHeader, StatusPill
-└── sections/      Hero, Services, Portfolio, Process, Contact
+└── sections/      Hero, About, Portfolio, Skills, Experience, Contact
 ```
 
 ## Recursividade

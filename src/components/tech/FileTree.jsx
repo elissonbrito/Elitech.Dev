@@ -82,7 +82,7 @@ function TreeNode({ node, depth, expanded, onToggle, selectedId, onSelect }) {
 
 export function FileTree({ root, ...props }) {
   return (
-    <ul role="tree" aria-label="Estrutura da EliTech" className="tree">
+    <ul role="tree" aria-label="Arquivos do portfólio" className="tree">
       <TreeNode node={root} depth={0} {...props} />
     </ul>
   );

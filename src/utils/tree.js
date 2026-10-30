@@ -19,7 +19,7 @@ export function findFirstLeaf(node) {
 
 /**
  * Caminho da raiz até o nó com `id`, ou null se não existir.
- * Ex.: ['elitech', 'projetos', 'r-bombas', 'index.html']
+ * Ex.: ['elisson', 'projetos', 'sistemas', 'r-bombas.html']
  */
 export function findPath(node, id, trail = []) {
   const here = [...trail, node];

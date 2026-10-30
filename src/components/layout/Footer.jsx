@@ -11,9 +11,9 @@ export function Footer() {
         <Logo size={40} withTagline />
         <div className="footer__meta mono">
           <span>
-            © {year} {site.legalName}
+            © {year} {site.fullName}
           </span>
-          <span>{site.city} · build v1.0.0</span>
+          <span>{site.city} · feito em React por mim</span>
         </div>
       </div>
     </footer>

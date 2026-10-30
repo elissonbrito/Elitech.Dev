@@ -63,27 +63,26 @@ export function Contact() {
     <section id="contato" className="contact">
       <div className="contact__inner container">
         <div className="contact__copy">
-          <span className="contact__path mono">~/elitech/contato</span>
+          <span className="contact__path mono">~/{site.handle}/contato</span>
           <h2 className="contact__title">
-            Tem uma ideia?
+            Tem uma vaga ou um projeto?
             <br />
-            Vamos tirar do papel.
+            Vamos conversar.
           </h2>
-          <p className="contact__lead">Atendemos {site.region}. Respondemos rápido pelo WhatsApp e pelo Instagram.</p>
+          <p className="contact__lead">
+            Estou aberto a oportunidades em dados, BI e desenvolvimento. O jeito mais rápido de me achar é pelo
+            LinkedIn ou pelo e-mail.
+          </p>
           <div className="contact__seal" aria-hidden="true">
             <LogoMark size={96} />
           </div>
         </div>
 
         <div className="contact__links">
-          <ContactLink href={contact.whatsappUrl} icon="whatsapp" label="whatsapp" value={contact.phoneLabel} />
-          <ContactLink
-            href={contact.instagramUrl}
-            icon="instagram"
-            label="instagram"
-            value={contact.instagramHandle}
-          />
+          <ContactLink href={contact.linkedinUrl} icon="linkedin" label="linkedin" value={contact.linkedinHandle} />
+          <ContactLink href={contact.githubUrl} icon="github" label="github" value={contact.githubHandle} />
           <CopyEmail email={contact.email} />
+          <ContactLink href={contact.whatsappUrl} icon="whatsapp" label="whatsapp" value={contact.phoneLabel} />
         </div>
       </div>
     </section>
