@@ -16,7 +16,7 @@ export const site = Object.freeze({
     linkedinHandle: 'in/elissonjbrito',
     linkedinUrl: 'https://www.linkedin.com/in/elissonjbrito/',
     githubHandle: '@elissonjbrito',
-    githubUrl: 'https://github.com/elissonjbrito',
+    githubUrl: 'https://github.com/elissonbrito',
     phoneLabel: '(21) 97126-8667',
     whatsappUrl: `https://wa.me/${PHONE_DIGITS}?text=${encodeURIComponent(
       'Olá, Élisson! Vi seu portfólio e gostaria de conversar.',
